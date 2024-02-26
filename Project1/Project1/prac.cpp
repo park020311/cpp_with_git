@@ -1,54 +1,37 @@
 #include<iostream>
-#include<string>
 using namespace std;
 
-class Character {
+class Test {
 private:
-	string name;
-	int level;
+	int num;
 public:
-	Character(string recName, int recLevel) {
-		name = recName;
-		level = recLevel;
+	Test(int n) {
+		num = n;
+		cout << num << "생성자 실행" << endl;
 
-
 	}
-	void printInformation() {
-		cout << "아이디 : " << name << endl;
-		cout << "레벨 : " << level << endl;
-		
+	~Test() {
+		cout << num << "소멸자 실행" << endl;
 	}
-
-	void setLevel(int changedLevel) {
-		level = changedLevel;
+	void printData() {
+		cout << "가지고 있는 값 : " << num << endl;
 	}
-	int getLevel() {
-		return level;
-	}
-	string getName() {
-		return name;
-	}
-
 };
 
+void function() {
 
-
+	Test t3(3);
+	Test t4(4);
+}
 int main() {
-	string tmpName;
-	cin >> tmpName;
+	Test t1(1);
+	Test t2(2);
 
-	int tmpLevel;
-	cin >> tmpLevel;
-	
-	Character p1(tmpName, tmpLevel);
-	p1.printInformation();
+	function();
 
-	p1.setLevel(p1.getLevel() + 1);
-	p1.printInformation();
+	Test t5(5);
+	Test t6(6);
 
 	
-
-
-
 	return 0;
 }
